@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>郵便番号検索結果</title>
+	</head>
+	<body style="font-family:游明朝; background-color:#FFFEF9;">
+		<h1 style="color:black;font-size: 50px;line-height:60px;margin-top:8px;border-style:solid;border-right-style:hidden;border-left-style:hidden;text-align:center;background-color:#D3E8C1;">検索結果</h1>
+		<br>
+		<table align="center" border = "1" style="background-color:white;">
+		<tr style="background-color:#D3E8C1;font-size:20px;">
+			<th>zipcode</th>
+			<th>prefcode</th>
+			<th>address1</th>
+			<th>address2</th>
+			<th>address3</th>
+			<th>kana1</th>
+			<th>kana2</th>
+			<th>kana3</th>
+		</tr>
+
+			<tr th:each="zip2 : ${zip2address}" th:object="${zip2address}" style="text-align:right;background-color:white;font-size:20px;">
+				<td th:text="${zip2.zipcode}"></td>
+				<td th:text="${zip2.prefcode}"></td>
+				<td th:text="${zip2.address1}"></td>
+				<td th:text="${zip2.address2}"></td>
+				<td th:text="${zip2.address3}"></td>
+				<td th:text="${zip2.kana1}"></td>
+				<td th:text="${zip2.kana2}"></td>
+				<td th:text="${zip2.kana3}"></td>
+				
+			</tr>
+		</table>
+	</body>
+</html>
